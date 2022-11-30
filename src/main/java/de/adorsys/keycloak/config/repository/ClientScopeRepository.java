@@ -58,6 +58,7 @@ public class ClientScopeRepository {
         return clientScopeNames
                 .stream()
                 .map(scopeName -> getByName(realmName, scopeName))
+                .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
 
